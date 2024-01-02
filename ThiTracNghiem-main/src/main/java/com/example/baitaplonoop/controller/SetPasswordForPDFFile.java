@@ -49,7 +49,11 @@ public class SetPasswordForPDFFile implements Initializable {
 
                 PdfReader reader;
                 try {
+<<<<<<< HEAD
                     File file = new File("E:/Database Lab/ThiTracNghiem-main/ThiTracNghiem-main/src/main/resources/com/example/baitaplonoop/pdf/" + quizChosen + ".pdf");
+=======
+                    File file = new File("./src/main/resources/com/example/baitaplonoop/pdf/" + quizChosen + ".pdf");
+>>>>>>> ab47b89253bbb1b618244df2e095ad0133aa0e57
                     byte[] bytes = Files.readAllBytes(file.toPath());
                     reader = new PdfReader(bytes);
                     PdfStamper stamp = new PdfStamper(reader, new FileOutputStream(file));

@@ -30,7 +30,11 @@ public class insertQuestionInto {
     }
 
     public static void insertQuestionIntoTableViewWithoutSubcategoryInNewQuiz(TreeItem<String> item, ObservableList<QuestionCheckBoxInTable> questionsList) {
+<<<<<<< HEAD
         String questionView = "select *from public.Question as q,public.Category as c where q.categoryID = c.categoryID and c.categoryName = N'" + FindCategoryInfo.findCategoryName(item.getValue()) + "'";
+=======
+        String questionView = "select *from dbo.Question as q,dbo.Category as c where q.categoryID = c.categoryID and c.categoryName = N'" + FindCategoryInfo.findCategoryName(item.getValue()) + "'";
+>>>>>>> ab47b89253bbb1b618244df2e095ad0133aa0e57
         ResultSet rs1 = db.getData(questionView);
 
         try {
@@ -45,7 +49,11 @@ public class insertQuestionInto {
 
     //Add questions to the tableView if you also add questions of subcategories
     public static void insertQuestionIntoTableViewWithSubcategoryInNewQuiz(TreeItem<String> item, ObservableList<QuestionCheckBoxInTable> questionsList) {
+<<<<<<< HEAD
         String questionView = "select *from public.Question as q,public.Category as c where q.categoryID = c.categoryID and c.categoryName = N'" + FindCategoryInfo.findCategoryName(item.getValue()) + "'";
+=======
+        String questionView = "select *from dbo.Question as q,dbo.Category as c where q.categoryID = c.categoryID and c.categoryName = N'" + FindCategoryInfo.findCategoryName(item.getValue()) + "'";
+>>>>>>> ab47b89253bbb1b618244df2e095ad0133aa0e57
         ResultSet rs1 = db.getData(questionView);
         try {
             while (rs1.next()) {
@@ -65,7 +73,11 @@ public class insertQuestionInto {
     }
     //Add questions to the listView if you also add questions of subcategories
     public static void insertQuestionIntoQuestionListWithSubcategoryInNewQuiz(TreeItem<String> item,ObservableList<QuestionCheckBoxInTable> questionsList) {
+<<<<<<< HEAD
         String questionView = "select *from public.Question as q,public.Category as c where q.categoryID = c.categoryID and c.categoryName = N'" + FindCategoryInfo.findCategoryName(item.getValue()) + "'";
+=======
+        String questionView = "select *from dbo.Question as q,dbo.Category as c where q.categoryID = c.categoryID and c.categoryName = N'" + FindCategoryInfo.findCategoryName(item.getValue()) + "'";
+>>>>>>> ab47b89253bbb1b618244df2e095ad0133aa0e57
         ResultSet rs1 = db.getData(questionView);
         try {
             while (rs1.next()) {
@@ -83,7 +95,11 @@ public class insertQuestionInto {
         }
     }
     public static void insertQuestionIntoQuestionListWithoutSubcategory(TreeItem<String> item,ObservableList<String> questionsList,ObservableList<Pair<String,String>> questionRandom) {
+<<<<<<< HEAD
         String questionView = "select *from public.Question as q,public.Category as c where q.categoryID = c.categoryID and c.categoryName = N'" + FindCategoryInfo.findCategoryName(item.getValue()) + "'";
+=======
+        String questionView = "select *from dbo.Question as q,dbo.Category as c where q.categoryID = c.categoryID and c.categoryName = N'" + FindCategoryInfo.findCategoryName(item.getValue()) + "'";
+>>>>>>> ab47b89253bbb1b618244df2e095ad0133aa0e57
         ResultSet rs1 = db.getData(questionView);
         try {
             while (rs1.next()) {
@@ -96,7 +112,11 @@ public class insertQuestionInto {
         }
     }
     public static void insertQuestionIntoTableViewWithoutSubcategory(TreeItem<String> item, ObservableList<addQuestion> questionsList) {
+<<<<<<< HEAD
         String questionView = "select *from public.Question as q,public.Category as c where q.categoryID = c.categoryID and c.categoryName = N'" + FindCategoryInfo.findCategoryName(item.getValue()) + "'";
+=======
+        String questionView = "select *from dbo.Question as q,dbo.Category as c where q.categoryID = c.categoryID and c.categoryName = N'" + FindCategoryInfo.findCategoryName(item.getValue()) + "'";
+>>>>>>> ab47b89253bbb1b618244df2e095ad0133aa0e57
         ResultSet rs1 = db.getData(questionView);
         try {
             while (rs1.next()) {
@@ -112,7 +132,11 @@ public class insertQuestionInto {
 
     //Add questions to the tableView if you also add questions of subcategories
     public static void insertQuestionIntoTableViewWithSubcategory(TreeItem<String> item, ObservableList<addQuestion> questionsList) {
+<<<<<<< HEAD
         String questionView = "select *from public.Question as q,public.Category as c where q.categoryID = c.categoryID and c.categoryName = N'" + FindCategoryInfo.findCategoryName(item.getValue()) + "'";
+=======
+        String questionView = "select *from dbo.Question as q,dbo.Category as c where q.categoryID = c.categoryID and c.categoryName = N'" + FindCategoryInfo.findCategoryName(item.getValue()) + "'";
+>>>>>>> ab47b89253bbb1b618244df2e095ad0133aa0e57
         ResultSet rs1 = db.getData(questionView);
         try {
             while (rs1.next()) {
@@ -132,7 +156,11 @@ public class insertQuestionInto {
     }
     //Add questions to the listView if you also add questions of subcategories
     public static void insertQuestionIntoQuestionListWithSubcategory(TreeItem<String> item,ObservableList<String> questionsList,ObservableList<Pair<String,String>> questionRandom) {
+<<<<<<< HEAD
         String questionView = "select *from public.Question as q,public.Category as c where q.categoryID = c.categoryID and c.categoryName = N'" + FindCategoryInfo.findCategoryName(item.getValue()) + "'";
+=======
+        String questionView = "select *from dbo.Question as q,dbo.Category as c where q.categoryID = c.categoryID and c.categoryName = N'" + FindCategoryInfo.findCategoryName(item.getValue()) + "'";
+>>>>>>> ab47b89253bbb1b618244df2e095ad0133aa0e57
         ResultSet rs1 = db.getData(questionView);
         try {
             while (rs1.next()) {

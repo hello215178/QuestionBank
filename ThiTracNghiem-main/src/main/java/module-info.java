@@ -24,8 +24,11 @@ module com.example.baitaplonoop {
     requires org.controlsfx.controls;
     requires  jfxtras.controls;
     requires org.bouncycastle.provider;
+<<<<<<< HEAD
     requires org.postgresql.jdbc;
 
+=======
+>>>>>>> ab47b89253bbb1b618244df2e095ad0133aa0e57
 
     opens com.example.baitaplonoop to javafx.fxml;
     exports com.example.baitaplonoop;

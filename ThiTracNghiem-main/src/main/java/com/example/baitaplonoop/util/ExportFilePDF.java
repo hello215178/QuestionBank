@@ -14,8 +14,12 @@ public class ExportFilePDF {
     static DBConnect db = new DBConnect();
     public static void exportPDFFile(){
         Document doc = new Document();
+<<<<<<< HEAD
         String path = "E:/Database Lab/ThiTracNghiem-main/ThiTracNghiem-main/src/main/resources/com/example/baitaplonoop/pdf/" + quizChosen + ".pdf";
         //String path = "./src/main/resources/com/example/baitaplonoop/pdf/" + quizChosen + ".pdf";
+=======
+        String path = "./src/main/resources/com/example/baitaplonoop/pdf/" + quizChosen + ".pdf";
+>>>>>>> ab47b89253bbb1b618244df2e095ad0133aa0e57
         ResultSet rs = db.getData("Select questionID from QuestionInQuiz where quizName = N'" + quizChosen + "'");
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Import information");

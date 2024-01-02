@@ -15,7 +15,11 @@ public class insertCategoryIntoTreeView {
             while (rs1.next()) {
                 String childrenCategory = rs1.getString("categoryName");
                 String numberQuestions;
+<<<<<<< HEAD
                 ResultSet rs2 = db.getData(("select count(*) as cnt from public.Category as c,public.Question as q where q.categoryID=c.categoryID and c.categoryName= N'") + childrenCategory + "'");
+=======
+                ResultSet rs2 = db.getData(("select count(*) as cnt from dbo.Category as c,dbo.Question as q where q.categoryID=c.categoryID and c.categoryName= N'") + childrenCategory + "'");
+>>>>>>> ab47b89253bbb1b618244df2e095ad0133aa0e57
                 rs2.next();
                 String childrenCategory1;
                 numberQuestions = Integer.toString(rs2.getInt("cnt"));
@@ -25,7 +29,11 @@ public class insertCategoryIntoTreeView {
                     childrenCategory1 = childrenCategory;
                 }
                 TreeItem<String> item = new TreeItem<>(childrenCategory1);
+<<<<<<< HEAD
                 String a = "Select * from public.Category where parentID = N'" + rs1.getString("categoryID") + "'";
+=======
+                String a = "Select * from dbo.Category where parentID = N'" + rs1.getString("categoryID") + "'";
+>>>>>>> ab47b89253bbb1b618244df2e095ad0133aa0e57
                 insertCategory(a, item);
                 root.getChildren().add(item);
             }

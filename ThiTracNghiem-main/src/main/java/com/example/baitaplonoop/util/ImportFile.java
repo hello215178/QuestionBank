@@ -335,11 +335,19 @@ public class ImportFile {
                 for (int k = start.get(j).LineNumber + 1; k < end.get(j).LineNumber; k++) {
                     String choiceID = questionPart[0] + (k - start.get(j).LineNumber);
                     String partChoice[] = part.get(k).split(". ", 2);
+<<<<<<< HEAD
                     if (partChoice[0].equals(answer[1])) { //lựa chọn giống câu trả lời
                         String insertChoice[] = {partChoice[1], "1.00", choiceID, questionPart[0], "false", null};
                         int choiceRowInserted = db.InsertChoice(insertChoice);
                     } else {
                         String insertChoice[] = {partChoice[1], "0", choiceID, questionPart[0], "false", null};
+=======
+                    if (partChoice[0].equals(answer[1])) {
+                        String insertChoice[] = {partChoice[1], "1.00", choiceID, questionPart[0], "0"};
+                        int choiceRowInserted = db.InsertChoice(insertChoice);
+                    } else {
+                        String insertChoice[] = {partChoice[1], "0", choiceID, questionPart[0], "0"};
+>>>>>>> ab47b89253bbb1b618244df2e095ad0133aa0e57
                         int choiceRowInserted = db.InsertChoice(insertChoice);
                     }
                 }
