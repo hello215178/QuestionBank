@@ -105,11 +105,7 @@ public class GUI65Controller implements Initializable {
             else {
                 TreeItem<String> root = new TreeItem<>("For IT");
                 try {
-<<<<<<< HEAD
                     insertCategoryIntoTreeView.insertCategory("select * from public.Category where parentID is NULL", root);
-=======
-                    insertCategoryIntoTreeView.insertCategory("select * from dbo.Category where parentID is NULL", root);
->>>>>>> ab47b89253bbb1b618244df2e095ad0133aa0e57
                 } catch (Exception e) {
                     throw new RuntimeException(e);
                 }

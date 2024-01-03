@@ -1,11 +1,8 @@
 package com.example.baitaplonoop.sql;
 
 import java.sql.*;
-<<<<<<< HEAD
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-=======
->>>>>>> ab47b89253bbb1b618244df2e095ad0133aa0e57
 import java.time.LocalDateTime;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -14,18 +11,10 @@ public class DBConnect {
     public Connection con;
     public DBConnect() {
         try {
-<<<<<<< HEAD
             Class.forName("org.postgresql.Driver");
             String url = "jdbc:postgresql://localhost:5432/Exam_Management2";
             String username = "postgres";
             String password = "Maianh1010?";
-=======
-            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            String url = "jdbc:sqlserver://DESKTOP-AP629KT\\SQLEXPRESS:1433;databaseName=Exam_Management2;"
-                    + "encrypt=true;trustServerCertificate=true;sslProtocol=TLSv1.2";
-            String username = "sa";
-            String password = "hoangphuc0703";
->>>>>>> ab47b89253bbb1b618244df2e095ad0133aa0e57
             con = DriverManager.getConnection(url, username, password);
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(DBConnect.class.getName()).log(Level.SEVERE, null, ex);
@@ -41,10 +30,6 @@ public class DBConnect {
         }
         return rs;
     }
-<<<<<<< HEAD
-
-=======
->>>>>>> ab47b89253bbb1b618244df2e095ad0133aa0e57
     public int InsertQuestion(String[] stringSQL) {
         int rowInserted;
         String sql = "INSERT INTO Question(categoryID, questionID, questionText, questionMark, questionMedia) values(?,?,?,?,?)";
@@ -54,11 +39,7 @@ public class DBConnect {
             statement.setString(1, stringSQL[0]);
             statement.setString(2, stringSQL[1]);
             statement.setString(3, stringSQL[2]);
-<<<<<<< HEAD
             statement.setDouble(4, Double.parseDouble(stringSQL[3]));
-=======
-            statement.setString(4, stringSQL[3]);
->>>>>>> ab47b89253bbb1b618244df2e095ad0133aa0e57
             statement.setString(5, stringSQL[4]);
             rowInserted = statement.executeUpdate();
         } catch (SQLException e) {
@@ -66,7 +47,6 @@ public class DBConnect {
         }
         return rowInserted;
     }
-<<<<<<< HEAD
 
 
 //    public int InsertQuestion(String[] stringSQL) {
@@ -87,8 +67,6 @@ public class DBConnect {
 //        return rowInserted;
 //    }
 
-=======
->>>>>>> ab47b89253bbb1b618244df2e095ad0133aa0e57
 //    public int InsertQuestion(String[] stringSQL) {
 //        int rowInserted = 0;
 //        String sql = "INSERT INTO Question(categoryID, questionID, questionText) values(?,?,?)";
@@ -114,11 +92,7 @@ public class DBConnect {
             statement.setFloat(2, Float.parseFloat(stringSQL[1]));
             statement.setString(3, stringSQL[2]);
             statement.setString(4, stringSQL[3]);
-<<<<<<< HEAD
             statement.setBoolean(5, Boolean.parseBoolean(stringSQL[4]));
-=======
-            statement.setString(5, stringSQL[4]);
->>>>>>> ab47b89253bbb1b618244df2e095ad0133aa0e57
             statement.setString(6, stringSQL[5]);
             rowInserted = statement.executeUpdate();
         } catch (SQLException e) {
@@ -133,7 +107,6 @@ public class DBConnect {
         statement = con.prepareStatement(sql);
         statement.setString(1, stringSQL[0]);
         statement.setString(2, stringSQL[1]);
-<<<<<<< HEAD
         if (stringSQL[2] != null) {
             double yourMark = Double.parseDouble(stringSQL[2].trim());
             statement.setDouble(3, yourMark);
@@ -141,9 +114,6 @@ public class DBConnect {
             // Xử lý trường hợp giá trị là null, có thể đặt giá trị mặc định hoặc thực hiện các hành động phù hợp
             statement.setNull(3, java.sql.Types.DOUBLE);
         }
-=======
-        statement.setString(3, stringSQL[2]);
->>>>>>> ab47b89253bbb1b618244df2e095ad0133aa0e57
         rowInserted = statement.executeUpdate();
         return rowInserted;
     }
@@ -172,7 +142,6 @@ public class DBConnect {
         }
 
     }
-<<<<<<< HEAD
 
     private Timestamp convertStringToTimestamp(String dateString) throws SQLException {
         try {
@@ -186,21 +155,14 @@ public class DBConnect {
         }
     }
 
-=======
->>>>>>> ab47b89253bbb1b618244df2e095ad0133aa0e57
     public int AddNewQuiz(String[] stringSQL) {
         int rowInserted = 0;
         String sql = "INSERT INTO Quiz(quizName, Descript, openTime, closeTime, timeLimit) values (?, ?, ?, ?, ?)";
         PreparedStatement statement;
-<<<<<<< HEAD
-
-=======
->>>>>>> ab47b89253bbb1b618244df2e095ad0133aa0e57
         try {
             statement = con.prepareStatement(sql);
             statement.setString(1, stringSQL[0]);
             statement.setString(2, stringSQL[1]);
-<<<<<<< HEAD
 
             // Chuyển đổi String sang Timestamp (ví dụ, bạn có thể sử dụng java.sql.Timestamp)
             Timestamp openTime = convertStringToTimestamp(stringSQL[2]);
@@ -213,20 +175,13 @@ public class DBConnect {
             int timeLimit = Integer.parseInt(stringSQL[4]);
             statement.setInt(5, timeLimit);
 
-
-
-=======
-            statement.setString(3, stringSQL[2]);
-            statement.setString(4, stringSQL[3]);
-            statement.setString(5, stringSQL[4]);
->>>>>>> ab47b89253bbb1b618244df2e095ad0133aa0e57
             rowInserted = statement.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
         return rowInserted;
     }
-<<<<<<< HEAD
+
 
 
     //    public int AddNewQuiz(String[] stringSQL) {
@@ -246,8 +201,6 @@ public class DBConnect {
 //        }
 //        return rowInserted;
 //    }
-=======
->>>>>>> ab47b89253bbb1b618244df2e095ad0133aa0e57
     public String[] FindQuestionInfo(String questionID) {
         String[] questionInfo = null;
         String sql = "SELECT questionText,questionMedia FROM Question WHERE questionID = ?";
@@ -257,12 +210,8 @@ public class DBConnect {
             statement.setString(1, questionID);
             ResultSet rs = statement.executeQuery();
             if (rs.next()) {
-<<<<<<< HEAD
                 //String questionText = rs.getNString("questionText");
                 String questionText = rs.getString("questionText");
-=======
-                String questionText = rs.getNString("questionText");
->>>>>>> ab47b89253bbb1b618244df2e095ad0133aa0e57
                 String questionMedia = rs.getString("questionMedia");
                 questionInfo = new String[]{questionText, questionMedia};
             }
@@ -280,12 +229,8 @@ public class DBConnect {
             statement.setString(1, choiceID);
             ResultSet rs = statement.executeQuery();
             if (rs.next()) {
-<<<<<<< HEAD
                 //String choiceText = rs.getNString("choiceText");
                 String choiceText = rs.getString("choiceText");
-=======
-                String choiceText = rs.getNString("choiceText");
->>>>>>> ab47b89253bbb1b618244df2e095ad0133aa0e57
                 Float choiceGrade = rs.getFloat("choiceGrade");
                 String choiceMedia = rs.getString("choiceMedia");
                 choiceInfo = new String[]{choiceText, String.valueOf(choiceGrade), choiceMedia};
@@ -295,7 +240,6 @@ public class DBConnect {
         }
         return choiceInfo;
     }
-<<<<<<< HEAD
 
     public void UpdateQuestion(String[] questionInfo) throws SQLException {
         int rowsAffected = 0;
@@ -401,48 +345,7 @@ public class DBConnect {
 //        statement.setString(1,Boolean.toString(a));
 //        result = statement.execute();
 //    }
-=======
-    public void UpdateQuestion(String[] questionInfo) throws SQLException {
-        int rowInserted = 0;
-        String sql = "MERGE Question AS target USING (VALUES (?,?,?,?,?)) " +
-                "AS source (categoryID, questionID, questionText, questionMark, questionMedia)  " +
-                "ON target.questionID = source.questionID  " +
-                "WHEN MATCHED THEN  UPDATE SET questionText = source.questionText,  " +
-                "categoryID = source.categoryID, questionMedia = source.questionMedia, questionMark = source.questionMark " +
-                "WHEN NOT MATCHED THEN  INSERT (questionID, questionText, categoryID, questionMark, questionMedia)  " +
-                "VALUES (source.questionID, source.questionText, source.categoryID,source.questionMark, source.questionMedia);";
-        PreparedStatement statement;
-        statement = con.prepareStatement(sql);
-        statement.setString(1, questionInfo[0]);
-        statement.setString(2, questionInfo[1]);
-        statement.setString(3, questionInfo[2]);
-        statement.setFloat(4, Float.parseFloat(questionInfo[3]));
-        statement.setString(5, questionInfo[4]);
-        rowInserted = statement.executeUpdate();
 
-    }
-    public void UpdateChoice(String[] choiceInfo) throws SQLException {
-        int rowInserted = 0;
-        String sql = "MERGE Choice AS target USING (VALUES (?,?,?,?,?)) AS source (choiceText, choiceGrade, choiceID, questionID, choiceMedia)  ON target.choiceID = source.choiceID  WHEN MATCHED THEN  UPDATE SET choiceText = source.choiceText,  choiceGrade = source.choiceGrade, choiceID = source.choiceID,questionID = source.questionID, choiceMedia = source.choiceMedia  WHEN NOT MATCHED THEN  INSERT (choiceText, choiceGrade, choiceID, questionID, choiceMedia)  VALUES (source.choiceText, source.choiceGrade, source.choiceID, source.questionID, source.choiceMedia);";
-        PreparedStatement statement;
-        statement = con.prepareStatement(sql);
-        statement.setString(1, choiceInfo[0]);
-        statement.setFloat(2, Float.parseFloat(choiceInfo[1]));
-        statement.setString(3, choiceInfo[2]);
-        statement.setString(4, choiceInfo[3]);
-        statement.setString(5,  choiceInfo[4]);
-        rowInserted = statement.executeUpdate();
-
-    }
-    public void updateQuiz(boolean a, String quizName) throws  SQLException{
-        boolean result =false;
-        String sql="update Quiz set shuffle = ? where quizName = N'"+quizName+"'";
-        PreparedStatement statement;
-        statement=con.prepareStatement(sql);
-        statement.setString(1,Boolean.toString(a));
-        result = statement.execute();
-    }
->>>>>>> ab47b89253bbb1b618244df2e095ad0133aa0e57
     public boolean checkQuestionID(String questionID) throws SQLException {
         boolean result = false;
         String sql = "SELECT * FROM Question WHERE questionID = ?"; // Câu lệnh SQL truy vấn dữ liệu theo questionID
@@ -460,11 +363,7 @@ public class DBConnect {
         String sql = "Update Quiz set mark = ? where quizName = N'" + quizChosen + "'";
         try {
             PreparedStatement statement = con.prepareStatement(sql);
-<<<<<<< HEAD
             statement.setDouble(1, mark);
-=======
-            statement.setString(1, String.valueOf(mark));
->>>>>>> ab47b89253bbb1b618244df2e095ad0133aa0e57
             rowUpdated = statement.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);

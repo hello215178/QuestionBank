@@ -182,11 +182,8 @@ public class GUI73Controller implements Initializable {
             }
             String quizName = quizChosen;
             LocalDateTime localDateTime = LocalDateTime.now();
-<<<<<<< HEAD
             ResultSet rs1 = db.getData("select * from public.Quiz where quizName = N'" + quizName + "'");
-=======
-            ResultSet rs1 = db.getData("select * from dbo.Quiz where quizName = N'" + quizName + "'");
->>>>>>> ab47b89253bbb1b618244df2e095ad0133aa0e57
+            //ResultSet rs1 = db.getData("select * from public.Quiz where quizName = N'" + quizName + "'");
             LocalDateTime openTime;
             LocalDateTime closeTime;
 
