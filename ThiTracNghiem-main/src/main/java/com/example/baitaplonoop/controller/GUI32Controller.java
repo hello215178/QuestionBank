@@ -13,6 +13,7 @@ import javafx.scene.layout.AnchorPane;
 
 import java.io.*;
 import java.net.URL;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.ResourceBundle;
@@ -72,6 +73,7 @@ public class GUI32Controller implements Initializable {
     public Button addImageChoice6_btn;
     public ImageView imageChoice6_iv;
     public Button editing_btn;
+    public Button delete_btn;
     public Button cancel_btn;
     public MediaView mediaQuestion_mv;
     String path1;
@@ -253,6 +255,32 @@ public class GUI32Controller implements Initializable {
         }
     }   // Add new Question into SQL
 
+    public void removeQuestion() throws SQLException{
+        try {
+            boolean questionExists;
+            try {
+                questionExists = db.checkQuestionID(questionName_tf.getText().trim());
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+
+            if (questionExists) {
+                // Xóa câu hỏi từ cơ sở dữ liệu
+                db.deleteQuestion(questionName_tf.getText().trim());
+
+                // Hiển thị thông báo xóa thành công
+                AlertOOP.AddDone("Delete Question Status", "Delete Question Done", "Done");
+            } else {
+                // Hiển thị cảnh báo nếu câu hỏi không tồn tại
+                AlertOOP.mustFill("Delete Question Status", "Delete Question Fail", "Question does not exist");
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         videoPane_ap.setVisible(false);
@@ -377,6 +405,13 @@ public class GUI32Controller implements Initializable {
             try {
                 AddQuestionIntoSQL();
             } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        });
+        delete_btn.setOnMouseClicked(deleteEvent -> {
+            try {
+                removeQuestion();
+            } catch (SQLException e){
                 throw new RuntimeException(e);
             }
         });

@@ -269,6 +269,17 @@ public class DBConnect {
         }
     }
 
+    public void deleteQuestion(String questionID) throws SQLException {
+        String deleteSql = "DELETE FROM question WHERE questionID = ?";
+        //deleteQuestionInQuiz(questionID);
+
+        try (PreparedStatement deleteStatement = con.prepareStatement(deleteSql)) {
+            deleteStatement.setString(1, questionID);
+            deleteStatement.executeUpdate();
+        }
+    }
+
+
 //    public void UpdateQuestion(String[] questionInfo) throws SQLException {
 //        int rowInserted = 0;
 //        String sql = "MERGE Question AS target USING (VALUES (?,?,?,?,?)) " +

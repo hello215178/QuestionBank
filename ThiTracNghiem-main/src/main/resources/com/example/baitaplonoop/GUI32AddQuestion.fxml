@@ -13,7 +13,7 @@
 <?import javafx.scene.media.MediaView?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #e0ffff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.baitaplonoop.controller.GUI32Controller">
+<AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #e0ffff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.baitaplonoop.controller.GUI32Controller">
     <ScrollPane fx:id="scrollPaneGui32" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #e0ffff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
 
         <AnchorPane fx:id="paneInScrollPane_ap" prefHeight="900.0" prefWidth="1900.0" style="-fx-background-color: #e0ffff;" stylesheets="@Design/Style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -35,6 +35,7 @@
                     <Button fx:id="editing_btn" layoutX="47.0" layoutY="86.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="217.0" styleClass="button_blue" text="Save change and continune editting" />
                     <Button fx:id="cancel_btn" layoutX="89.0" layoutY="132.0" mnemonicParsing="false" styleClass="button_red" text="Cancel" />
                     <Button fx:id="createChoice_btn" layoutX="97.0" layoutY="40.0" mnemonicParsing="false" styleClass="button_blue" text="Blanks more 3 choices" />
+               <Button fx:id="delete_btn" layoutX="274.0" layoutY="86.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="68.0" styleClass="button_blue" text="Delete" />
                 </AnchorPane>
                 <ImageView fx:id="imageQuestion_iv" fitHeight="99.0" fitWidth="75.0" layoutX="117.0" layoutY="131.0" pickOnBounds="true" preserveRatio="true" />
                 <Button fx:id="videoQuestion_btn" layoutX="31.0" layoutY="217.0" mnemonicParsing="false" text="Add Video" visible="false" />

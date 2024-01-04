@@ -1,7 +1,9 @@
 module com.example.baitaplonoop {
     requires javafx.controls;
     requires javafx.fxml;
-    requires com.microsoft.sqlserver.jdbc;
+
+    requires javafx.graphics;
+    //requires com.microsoft.sqlserver.jdbc;
     requires java.naming;
     requires java.sql;
     requires org.apache.poi.ooxml.schemas;
